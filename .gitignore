@@ -27,7 +27,6 @@ wheels/
 *.egg
 
 # Data directories
-data/books/*.pdf
 data/chroma_db/
 
 # Streamlit
