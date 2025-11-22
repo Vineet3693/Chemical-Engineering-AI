@@ -27,7 +27,7 @@ wheels/
 *.egg
 
 # Data directories
-data/chroma_db/
+# (All data files are now tracked for easy cloning)
 
 # Streamlit
 .streamlit/
