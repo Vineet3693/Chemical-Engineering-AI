@@ -1,0 +1,47 @@
+{
+  "processed_books": {
+    "Chemical Engineering Thermodynamics (Y.V.C. Rao) (Z-Library).pdf": {
+      "file_path": "D:\\ragg\\data\\books\\Chemical Engineering Thermodynamics (Y.V.C. Rao) (Z-Library).pdf",
+      "file_hash": "26ddaba7399b32b4a6ca77f36ac8f025",
+      "chunk_count": 1,
+      "processed_date": "2025-11-21T16:48:45.620369",
+      "file_size": 22677520
+    },
+    "Chemical Reaction Engineering (Octave Lavenspiel) (Z-Library).pdf": {
+      "file_path": "D:\\ragg\\data\\books\\Chemical Reaction Engineering (Octave Lavenspiel) (Z-Library).pdf",
+      "file_hash": "13647833c744b4fbcff09d3db22e561e",
+      "chunk_count": 271,
+      "processed_date": "2025-11-21T16:48:47.932150",
+      "file_size": 16851265
+    },
+    "Fluid mechanics (Douglas J.F., Gasoriek J.M., Swaffield J. etc.) (Z-Library).pdf": {
+      "file_path": "D:\\ragg\\data\\books\\Fluid mechanics (Douglas J.F., Gasoriek J.M., Swaffield J. etc.) (Z-Library).pdf",
+      "file_hash": "1370cc59eaf250eafdf2fe3ceda12386",
+      "chunk_count": 583,
+      "processed_date": "2025-11-21T16:48:53.653667",
+      "file_size": 23231676
+    },
+    "Heat Transfer (B. K. Dutta) (Z-Library).pdf": {
+      "file_path": "D:\\ragg\\data\\books\\Heat Transfer (B. K. Dutta) (Z-Library).pdf",
+      "file_hash": "4f21963012693504b719708b9c14ec68",
+      "chunk_count": 2,
+      "processed_date": "2025-11-21T16:48:54.593385",
+      "file_size": 71096635
+    },
+    "Heat transfer a practical approach (Yunus A. Cengel, Yunus Cengel) (Z-Library).pdf": {
+      "file_path": "D:\\ragg\\data\\books\\Heat transfer a practical approach (Yunus A. Cengel, Yunus Cengel) (Z-Library).pdf",
+      "file_hash": "e563f54d570a5bacb154a1a5233d5b81",
+      "chunk_count": 806,
+      "processed_date": "2025-11-21T16:48:58.267450",
+      "file_size": 10219879
+    },
+    "Principles of Mass Transfer and Separation Processes (Binay K. Dutta) (Z-Library).pdf": {
+      "file_path": "D:\\ragg\\data\\books\\Principles of Mass Transfer and Separation Processes (Binay K. Dutta) (Z-Library).pdf",
+      "file_hash": "4e815f65a72820a2d7fc9ad344ad7801",
+      "chunk_count": 3,
+      "processed_date": "2025-11-21T16:48:58.954643",
+      "file_size": 28899669
+    }
+  },
+  "last_updated": "2025-11-21T16:48:58.955647"
+}
