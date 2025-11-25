@@ -1,245 +1,74 @@
-# 🧪 Chemical Engineering RAG System
+# <span style="color:#0072B1">🧪 Chemical Engineering RAG System</span>
 
-<div align="center">
-
-![Python](https://img.shields.io/badge/Python-3.8+-blue.svg)
-![Streamlit](https://img.shields.io/badge/Streamlit-1.28+-red.svg)
-![ChromaDB](https://img.shields.io/badge/ChromaDB-Latest-green.svg)
-![License](https://img.shields.io/badge/License-Educational-yellow.svg)
-
-A powerful Retrieval-Augmented Generation (RAG) application for Chemical Engineering that combines document-based knowledge retrieval from textbooks with LLM-powered general knowledge, built with ChromaDB, Google Gemini, and Streamlit.
-
-[Features](#-features) • [Quick Start](#-quick-start) • [Usage](#-usage-guide) • [Tech Stack](#-technology-stack) • [Examples](#-example-queries)
-
-</div>
+_Discover answers in seconds: built for students, researchers, and pros_
 
 ---
 
-## ✨ Features
-
-- **📚 Book-Based RAG**: Query 4-5 Chemical Engineering textbooks with semantic search
-- **🌐 General Knowledge Mode**: Use Gemini's training data for broader questions
-- **💾 Persistent Storage**: ChromaDB vector database with automatic persistence
-- **📥 Export Functionality**: Download responses as PDF or DOCX
-- **📖 Citation Tracking**: Automatic references with book names and page numbers
-- **💬 Chat History**: Track all your queries and responses
-- **🎨 Modern UI**: Clean, intuitive Streamlit interface
-
-## 🏗️ Project Structure
-
-```
-d:/ragg/
-├── app.py                      # Main Streamlit application
-├── requirements.txt            # Python dependencies
-├── .env.example               # Environment variables template
-├── .gitignore                 # Git ignore patterns
-├── config/
-│   └── settings.py            # Configuration management
-├── data/
-│   ├── books/                 # Place your PDF books here
-│   └── chroma_db/             # ChromaDB persistent storage
-├── src/
-│   ├── document_processor.py  # PDF processing and chunking
-│   ├── vector_store.py        # ChromaDB operations
-│   ├── llm_handler.py         # Google Gemini integration
-│   ├── rag_engine.py          # RAG pipeline orchestration
-│   └── export_handler.py      # PDF/DOCX export
-└── utils/
-    └── helpers.py             # Utility functions
-```
-
-## 🚀 Quick Start
-
-### Prerequisites
-
-- Python 3.8 or higher
-- Google Gemini API key ([Get one here](https://makersuite.google.com/app/apikey))
-- 4-5 Chemical Engineering PDF textbooks
-
-### Installation
-
-1. **Clone or navigate to the project directory**:
-   ```bash
-   cd d:/ragg
-   ```
-
-2. **Install dependencies**:
-   ```bash
-   pip install -r requirements.txt
-   ```
-
-3. **Set up environment variables**:
-   - Copy `.env.example` to `.env`
-   - Add your Google Gemini API key:
-   ```env
-   GOOGLE_API_KEY=your_actual_api_key_here
-   ```
-
-4. **Add your Chemical Engineering books**:
-   - Place PDF files in `data/books/` directory
-   - Recommended: 4-5 comprehensive Chemical Engineering textbooks
-
-5. **Run the application**:
-   ```bash
-   streamlit run app.py
-   ```
-
-6. **Access the app**:
-   - Open your browser to `http://localhost:8501`
-
-## 📖 Usage Guide
-
-### First-Time Setup
-
-1. **Initialize System**: Click "🚀 Initialize System" in the sidebar
-2. **Process Books**: Click "📖 Process Books" to index your textbooks
-3. **Wait for Processing**: The system will extract and chunk all PDFs
-
-### Querying
-
-#### Book-Based Mode (Default)
-- Ask questions about content from your textbooks
-- Get answers with specific page references
-- Example: "Explain the principles of distillation"
-
-#### General Knowledge Mode
-- Toggle "Use General Knowledge" in the sidebar
-- Get answers from Gemini's training data
-- Useful for broader or current topics
-
-### Exporting Responses
-
-1. Submit a query and get an answer
-2. In the sidebar, click "📄 Export PDF" or "📝 Export DOCX"
-3. Download the formatted document with your question, answer, and citations
-
-## 🔧 Configuration
-
-Edit `config/settings.py` to customize:
-
-- **Chunk Size**: Default 1000 tokens
-- **Chunk Overlap**: Default 200 tokens
-- **Top K Results**: Default 5 chunks retrieved
-- **LLM Temperature**: Default 0.3 (lower = more factual)
-- **Embedding Model**: Default `all-MiniLM-L6-v2`
-
-## 📚 Technology Stack
-
-| Component | Technology |
-|-----------|-----------|
-| **UI Framework** | Streamlit |
-| **Vector Database** | ChromaDB |
-| **LLM** | Google Gemini Pro |
-| **Embeddings** | sentence-transformers |
-| **PDF Processing** | PyMuPDF (fitz) |
-| **PDF Export** | ReportLab |
-| **DOCX Export** | python-docx |
-
-## 🎯 Example Queries
-
-**Book-Based Mode:**
-- "What are the different types of heat exchangers?"
-- "Explain the Haber process for ammonia synthesis"
-- "What is the difference between batch and continuous reactors?"
-
-**General Knowledge Mode:**
-- "What are recent advances in green chemistry?"
-- "How is AI being used in chemical engineering?"
-- "What are the career prospects in chemical engineering?"
-
-## 🛠️ Troubleshooting
-
-### "No PDF files found"
-- Ensure PDF files are in `data/books/` directory
-- Check file permissions
-
-### "GOOGLE_API_KEY not found"
-- Create a `.env` file in the project root
-- Add your API key: `GOOGLE_API_KEY=your_key_here`
-
-### "Error initializing RAG system"
-- Verify all dependencies are installed
-- Check Python version (3.8+)
-- Ensure sufficient disk space for ChromaDB
-
-### Slow processing
-- Large PDFs take time to process
-- First-time embedding generation is slower
-- Subsequent queries use cached embeddings
-
-## 📁 Data Directories
-
-- **`data/books/`**: Store your PDF textbooks here
-- **`data/chroma_db/`**: Automatically created, stores vector embeddings
-- **`exports/`**: Automatically created, stores exported PDF/DOCX files
-
-## 🔒 Security Notes
-
-- Never commit `.env` file to version control
-- Keep your API key secure
-- The `.gitignore` file excludes sensitive data by default
-
-## 🚧 Advanced Features
-
-### Clear and Reload Books
-- Use "🔄 Reload Books" to reprocess all PDFs
-- Useful after adding new books or updating existing ones
-
-### Chat History Export
-- Export entire conversation history
-- Useful for study notes or documentation
-
-### Book-Specific Search
-- Modify `rag_engine.py` to search within specific books
-- Use `search_by_book()` method
-
-## 📝 Development
-
-### Project Structure
-- **`config/`**: Configuration and settings
-- **`src/`**: Core application modules
-- **`utils/`**: Helper functions
-- **`data/`**: Data storage (not in version control)
-
-### Key Modules
-- **`document_processor.py`**: PDF extraction and text chunking
-- **`vector_store.py`**: ChromaDB vector operations
-- **`llm_handler.py`**: Gemini API integration
-- **`rag_engine.py`**: RAG pipeline orchestration
-- **`export_handler.py`**: Document export functionality
-
-## 🤝 Contributing
-
-This is a standalone project. Feel free to:
-- Customize for your specific needs
-- Add new features
-- Improve existing functionality
-
-## 📄 License
-
-This project is provided as-is for educational and research purposes.
-
-## 🆘 Support
-
-For issues or questions:
-1. Check the troubleshooting section
-2. Review the code comments
-3. Verify your setup matches the requirements
-
-## 🎓 Educational Use
-
-Perfect for:
-- Chemical Engineering students
-- Researchers
-- Professionals needing quick reference
-- Study groups and collaborative learning
+## <span style="color:#028A0F">✨ Features</span>
+- **📚 Book-Based Q&A:** Semantic search from 4-5 textbooks  
+- **🌐 General Knowledge Mode:** Tap into Gemini's AI knowledge  
+- **💾 Persistent Storage:** ChromaDB with auto-save  
+- **📥 Export:** Download answers as PDF or DOCX  
+- **📖 Citations:** Automatic book/page referencing  
+- **💬 Chat History:** View and export queries  
+- **🎨 Modern UI:** Intuitive dashboard with stylish design
 
 ---
 
-<div align="center">
+## <span style="color:#FF9800">🚀 Quick Start</span>
+<details>
+<summary><strong>Show Steps</strong></summary>
 
-**Built with ❤️ for Chemical Engineers**
+1. Install <span style="color:#4A90E2;">Python 3.8+</span>  
+2. Get your <span style="color:#FFD700;">Google Gemini API key</span> ([How?](https://makersuite.google.com/app/apikey))  
+3. Place your textbooks in <code>data/books/</code>  
+4. Install dependencies  
+   <pre><code>pip install -r requirements.txt</code></pre>
+5. Configure <code>.env</code> with your API key  
+6. Launch the app  
+   <pre><code>streamlit run app.py</code></pre>
+7. Open your browser: <span style="color:#C71585;">http://localhost:8501</span>
+</details>
 
-*Powered by Google Gemini, ChromaDB, and Streamlit*
+---
 
-</div>
+## <span style="color:#AB47BC">📚 Tech Stack</span>
+| Component         | Technology            |
+| ----------------- | -------------------- |
+| **UI Framework**  | Streamlit            |
+| **Vector DB**     | ChromaDB             |
+| **LLM**           | Google 2.5 Flash    |
+| **Embeddings**    | sentence-transformers|
+| **PDF Handling**  | PyMuPDF (fitz)       |
+| **Export**        | ReportLab, python-docx|
+
+---
+
+## <span style="color:#00BFAE">💡 Example Queries</span>
+- What are the different types of heat exchangers?
+- Explain the Haber process for ammonia synthesis
+- Advances in green chemistry?
+- How is AI used in chemical engineering?
+
+---
+
+## <span style="color:#E57373">🛠️ Troubleshooting</span>
+- **PDFs not found:** Check <code>data/books/</code>  
+- **API key issues:** Verify <code>.env</code>  
+- **RAG errors:** Check requirements & Python 3.8+  
+- **Slow processing:** Large PDFs or first-time run
+
+---
+
+### <span style="color:#0097A7">Perfect For</span>
+- 🎓 Students
+- 📖 Researchers
+- 👷 Professionals
+- 💬 Study groups
+
+---
+
+<p align="center"><strong>
+Built with <span style="color:#FF4F4F;">❤️</span> for Chemical Engineers  
+Powered by <span style="color:#4A90E2;">Google Gemini</span>, <span style="color:#028A0F;">ChromaDB</span>, and <span style="color:#FFC107;">Streamlit</span>
+</strong></p>
